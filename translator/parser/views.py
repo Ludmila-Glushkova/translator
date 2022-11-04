@@ -30,6 +30,3 @@ def home(request):
             "textarea",
             attrs={"class": "form-control expand100-360 myscroll", "id": "tText"}).text
     return render(request, 'home.html', {'context': context})
-
-
-
