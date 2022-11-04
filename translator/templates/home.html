@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Переводчик</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="row centered mt mb">
+        <div class="col-lg-8 col-lg-offset-2 border">
+            <h2>Переводчик</h2><hr/>
+            <form method="GET">
+                <div>
+                    <input type="radio" id="contactChoice1"
+                           name="contact" value="rus">
+                    <label for="contactChoice1">перевод русский >> english</label>
+                </div>
+                <div>
+                    <input type="radio" id="contactChoice2"
+                           name="contact" value="eng">
+                    <label for="contactChoice2">перевод english >> русский</label>
+                </div>
+                <label for="word"></label>
+                <input
+                        type="text"
+                        name="word"
+                        id="word"
+                        placeholder="enter the word"
+                /><br/>
+                <p></p>
+                <input type="submit" class="btn btn-secondary" value="перевод">
+            </form>
+            {% if context %}
+
+            <h3>{{ context.translate }}</h3>
+
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
